@@ -1,22 +1,12 @@
-kubernetes.pod:
-  metadata:
-    name: my-pod
-    labels:
-      app: my-app
-  spec:
-    containers:
-      - name: my-container
-        image: nginx:latest
-        ports:
-          - containerPort: 80
-        env:
-          - name: ENV_VAR
-            value: "value"
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-    restartPolicy: Always
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    app: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    ports:
+    - containerPort: 80
