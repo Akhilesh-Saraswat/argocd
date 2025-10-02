@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx-pod
+  name: firefox-pod
   labels:
-    app: nginx
+    app: firefox
 spec:
   containers:
-  - name: nginx_newpod
-    image: nginx:latest
+  - name: firefox
+    image: linuxserver/firefox
     ports:
-    - containerPort: 80
+    - containerPort: 3000
