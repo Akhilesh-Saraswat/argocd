@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: argocd-application-controller-snapshot-access
+subjects:
+- kind: ServiceAccount
+  name: argocd-application-controller
+  namespace: milan # apne namespace ka name daalein
+roleRef:
+  kind: ClusterRole
+  name: argocd-snapshot-access
+  apiGroup: rbac.authorization.k8s.io
